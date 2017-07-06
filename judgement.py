@@ -46,34 +46,44 @@ ftest.writelines(ListOfThings)
 
 for i in range(len(AllLines)):
 	if "@api.route" in AllLines[i]:
-		index1 = AllLines[i+1].find("def")
-		index2 = AllLines[i+1].find("()")
-		str = AllLines[i+1][index1+4:index2]
+		count=0
+		while(True):
+			if "@" in AllLines[i]:
+				count+=1
+				i+=1
+			else:
+				break
+
+		index1 = AllLines[i].find("def")
+		index2 = AllLines[i].find("(")
+		str = AllLines[i][index1+4:index2]
+
+		print str
 
 		#special api
-		if "register" or "signup" in str:
-			ftest.writelines(["    def test_a_"+str+"(self):\n"])
-		elif "signin" or "login" in str:
-			ftest.writelines(["    def test_b_"+str+"(self):\n"])
+		if "register" in str or "signup" in str:
+			ftest.writelines(["\n    def test_a_"+str+"(self):\n"])
+		elif "signin" in str or "login" in str:
+			ftest.writelines(["\n    def test_b_"+str+"(self):\n"])
 		else:
-			ftest.writelines(["    def test_c_"+str+"(self):\n"])
+			ftest.writelines(["\n    def test_c_"+str+"(self):\n"])
 		###End special api
 
 
 		#find out methods
-		if "POST" in AllLines[i]:
+		if "POST" in AllLines[i-count]:
 			ftest.writelines(
 							["        response = self.client."+"post"+"(self):\n"]
 			)
 
 			ftest.writelines(
 				["          url_for('api." + str + "',_external=True),\n",
-				 "          data = json.dump({\n #Need complete}),\n",
+				 "          data = json.dump({ #Need complete}),\n",
 				 "          content_type = 'application/json')\n",
 				 "        self.assertTrue(response.status_code == 200)\n"]
 			)
 
-		elif "GET" in AllLines[i]:
+		elif "GET" in AllLines[i-count]:
 			ftest.writelines(
 							["        response = self.client."+"get"+"(self):\n"]
 			)
