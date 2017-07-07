@@ -47,16 +47,27 @@ def API_Test_Content(api_add):
 			index1 = AllLines[i].find("def")
 			index2 = AllLines[i].find("(")
 			str = AllLines[i][index1 + 4:index2]
-
+            
 			print str
 
 			# special api
 			if "register" in str or "signup" in str:
-				ftest.writelines(["\n    def test_a_" + str + "(self):\n"])
+				ftest.writelines([
+                                    "    #Test " + str,
+                                    "\n    def test_a_" + str + "(self):\n"
+                                ])
+
 			elif "signin" in str or "login" in str:
-				ftest.writelines(["\n    def test_b_" + str + "(self):\n"])
+				ftest.writelines([
+                                    "    #Test "+str,
+                                    "\n    def test_b_" + str + "(self):\n"
+                                ])
+
 			else:
-				ftest.writelines(["\n    def test_c_" + str + "(self):\n"])
+				ftest.writelines([
+                                    "    #Test "+str,
+                                    "\n    def test_c_" + str + "(self):\n"
+                                ])
 			###End special api
 
 
@@ -81,7 +92,7 @@ def API_Test_Content(api_add):
 				ftest.writelines(
 					["          url_for('api." + str + "',_external=True),\n",
 					 "          content_type = 'application/json')\n",
-					 "        self.assertTrue(response.status_code == 200)"]
+					 "        self.assertTrue(response.status_code == 200)\n"]
 				)
 			else:
 				ftest.writelines(
@@ -90,7 +101,7 @@ def API_Test_Content(api_add):
 				ftest.writelines(
 					["          url_for('api." + str + "',_external=True),\n",
 					 "          content_type = 'application/json')\n",
-					 "        self.assertTrue(response.status_code == 200)"]
+					 "        self.assertTrue(response.status_code == 200)\n"]
 				)
 			# End Of find out methods
 			f.close()
@@ -127,9 +138,9 @@ if __name__ == "__main__":
 	Static_Content()
 
 	for i in range(len(file_addes)):
-		print '---------------------------'
+		print '\n-------------API file Name-----------'
 		print file_addes[i]
-		print '---------------------------'
+		print '-----------------APIS----------------'
 		API_Test_Content(file_addes[i])
 
 	ftest.close()
