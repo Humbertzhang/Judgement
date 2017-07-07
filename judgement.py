@@ -133,14 +133,3 @@ if __name__ == "__main__":
 		API_Test_Content(file_addes[i])
 
 	ftest.close()
-
-
-
-
-
-
-
-
-
-
-
