@@ -8,9 +8,5 @@
 示例
 ```shell
 python judgement.py
-File Address:./api/user.py
-register
-login
-change_to_author
-change_to_common_user
+APIS ADRESS:api
 ```
