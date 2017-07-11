@@ -74,7 +74,7 @@ def API_Test_Content(api_add):
 			# find out methods
 			if "POST" in AllLines[i - count]:
 				ftest.writelines(
-					["        response = self.client." + "post" + "(self):\n"]
+					["        response = self.client." + "post" + "(\n"]
 				)
 
 				ftest.writelines(
@@ -86,7 +86,7 @@ def API_Test_Content(api_add):
 
 			elif "GET" in AllLines[i - count]:
 				ftest.writelines(
-					["        response = self.client." + "get" + "(self):\n"]
+					["        response = self.client." + "get" + "(\n"]
 				)
 
 				ftest.writelines(
@@ -96,7 +96,7 @@ def API_Test_Content(api_add):
 				)
 			else:
 				ftest.writelines(
-					["        response = self.client." + "XXXX" + "(self):\n"]
+					["        response = self.client." + "XXXX" + "(\n"]
 				)
 				ftest.writelines(
 					["            url_for('api." + str + "',_external=True),\n",
