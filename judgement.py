@@ -78,9 +78,9 @@ def API_Test_Content(api_add):
 				)
 
 				ftest.writelines(
-					["          url_for('api." + str + "',_external=True),\n",
-					 "          data = json.dump({ #Need complete}),\n",
-					 "          content_type = 'application/json')\n",
+					["            url_for('api." + str + "',_external=True),\n",
+					 "            data = json.dump({ #Need complete}),\n",
+					 "            content_type = 'application/json')\n",
 					 "        self.assertTrue(response.status_code == 200)\n"]
 				)
 
@@ -90,8 +90,8 @@ def API_Test_Content(api_add):
 				)
 
 				ftest.writelines(
-					["          url_for('api." + str + "',_external=True),\n",
-					 "          content_type = 'application/json')\n",
+					["            url_for('api." + str + "',_external=True),\n",
+					 "            content_type = 'application/json')\n",
 					 "        self.assertTrue(response.status_code == 200)\n"]
 				)
 			else:
@@ -99,8 +99,8 @@ def API_Test_Content(api_add):
 					["        response = self.client." + "XXXX" + "(self):\n"]
 				)
 				ftest.writelines(
-					["          url_for('api." + str + "',_external=True),\n",
-					 "          content_type = 'application/json')\n",
+					["            url_for('api." + str + "',_external=True),\n",
+					 "            content_type = 'application/json')\n",
 					 "        self.assertTrue(response.status_code == 200)\n"]
 				)
 			# End Of find out methods
@@ -142,5 +142,5 @@ if __name__ == "__main__":
 		print file_addes[i]
 		print '-----------------APIS----------------'
 		API_Test_Content(file_addes[i])
-
 	ftest.close()
+    print str(i)+"apis have been tested"
