@@ -142,5 +142,5 @@ if __name__ == "__main__":
 		print file_addes[i]
 		print '-----------------APIS----------------'
 		API_Test_Content(file_addes[i])
+
 	ftest.close()
-    print str(i)+"apis have been tested"
