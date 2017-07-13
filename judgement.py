@@ -162,6 +162,31 @@ def API_Test_Content(api_add):
 
 
 if __name__ == "__main__":
+    print '''
+
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+                   judgement                    
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++xxxxxxxxxxxxxxxxxx++++++++++++++++
++++++++++++++++xxxooooooooooooxxx++++++++++++++++
+               xxxooooooooooooxxx               
++++++++++++++++xxxooo      oooxxx++++++++++++++++
++++++++++++++++xxxooo      oooxxx++++++++++++++++
++++++++++++++++xxxooo      oooxxx++++++++++++++++
+               xxxooooooooooooxxx               
++++++++++++++++xxxxooowwwwoooxxxx++++++++++++++++
+++++++++++++++++++xxxooooooxxx+++++++++++++++++++
+++++++++++++++++++++++xxxx+++++++++++++++++++++++
+                       xx                      
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    '''
+#http://www.text-image.com/convert/
+    
     API_Floder = raw_input("API Floder Address:")
     files = os.listdir(API_Floder)
 
@@ -195,7 +220,7 @@ if __name__ == "__main__":
     for i in range(len(file_addes)):
         print '\n-------------API file Name-----------'
         print file_addes[i]
-        ftest.writelines(["\n"+" "*4 + "#--------API FILE NAME:"+ file_addes[i] + "------------------------------------------\n\n"])
+        ftest.writelines(["\n"+" "*4 + "#----------API FILE NAME:"+ file_addes[i] + "-------------------\n\n"])
         print '-----------------APIS----------------'
         API_Test_Content(file_addes[i])
 
