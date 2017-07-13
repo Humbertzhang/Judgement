@@ -1,4 +1,4 @@
-# Judgement－－半自动化Flask api测试
+# Judgement－－半自动化Flask api测试工具
 ![Markdown](http://i2.kiimg.com/1949/339853871a89da2f.jpg)
  
 
@@ -29,7 +29,7 @@ test.py文件下便有自动生成的测试
 5,仓库中testByjudgement文件夹中的test.py 为judgement.py根据test_apis文件夹生成的测试文件，以供参考
 
 ***
-示例
+### 示例
 ```shell
 `python judgement.py`
 APIS ADRESS:`test_apis`
