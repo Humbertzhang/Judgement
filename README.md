@@ -18,7 +18,7 @@ test.py文件下便有自动生成的测试
 2,若api中有`signin`或`login`字样，生成 def test_b_apiname(self):
 3,其余api生成 def test_c_apiname(self):
 4,对于需要用POST或PUT方法发送 json.dumps({)}的api，会根据get_json().get('content')括号中的内容自动生成json语句.如：'content':'test'
-
+5,仓库中testByjudgement文件夹中的test.py 为judgement.py根据test_apis文件夹生成的测试文件，以供参考
 ***
 示例
 ```shell
