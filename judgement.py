@@ -38,7 +38,7 @@ def API_Test_Content(api_add):
         if "@api.route" in AllLines[i]:
             count = 0
             while (True):
-                if "@" in AllLines[i]:
+                if "@" in AllLines[i] or "#" in AllLines[i] or AllLines[i].strip()=='':
                     count += 1
                     i += 1
                 else:
