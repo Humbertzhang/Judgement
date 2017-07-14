@@ -30,6 +30,7 @@ test.py文件下便有自动生成的测试
 
 ***
 ### 示例
+[![judge_demo.gif](https://storage2.cuntuku.com/2017/07/14/judge_demo.gif)](https://cuntuku.com/image/44PCc)
 ```shell
 `python judgement.py`
 APIS ADRESS:`test_apis`
