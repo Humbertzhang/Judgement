@@ -200,7 +200,8 @@ if __name__ == "__main__":
     if os.path.isfile("testByJudgement/test.py"):
         pass
     else:
-        os.mknod("testByJudgement/test.py")
+        with open("testByJudgement/test.py","w+") as f:
+            f.close()
 
     ftest = open("./testByJudgement/test.py", "w+")
     #End Open Test File

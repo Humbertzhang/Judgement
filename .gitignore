@@ -1,2 +1,4 @@
 *.pyc
-api
+testByJudgement
+*.toc
+*.spec
