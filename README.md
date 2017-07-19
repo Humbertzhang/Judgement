@@ -22,7 +22,6 @@ Judgement will auto wirte static content of an api test in the ./testByJudgement
 ### Demo
 
 [![judge_demo.gif](https://storage2.cuntuku.com/2017/07/14/judge_demo.gif)](https://cuntuku.com/image/44PCc)
->>>>>>> 00555362b19e80291c673ce7fa0cfb1102870335
 
 
 
